@@ -49,7 +49,6 @@ class CompanyFragment : Fragment() {
             if (error) {
 
                 fragmentCompanyBinding?.txtDescription?.text = "Произошла ошибка ! :("
-                Log.i("MyTag", "Error: " + error.toString())
                 Toast.makeText(requireContext(), "Ошибка подключения!", Toast.LENGTH_LONG).show()
             }
         })
