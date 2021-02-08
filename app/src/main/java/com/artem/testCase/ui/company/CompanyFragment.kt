@@ -38,11 +38,10 @@ class CompanyFragment : Fragment() {
         companyViewModel.lifehackResponse.observe(viewLifecycleOwner, {response ->
             if (response.isSuccessful){
 
-                Log.i("MyTag","Company Fragment: Vse v poradke")
                 response.body()?.let { companyViewModel.setData(it) }
             } else {
 
-                Toast.makeText(requireContext(),"Company Fragment: Ошибка !", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(),"Ошибка !", Toast.LENGTH_LONG).show()
             }
         })
 
@@ -51,7 +50,7 @@ class CompanyFragment : Fragment() {
 
                 fragmentCompanyBinding?.txtDescription?.text = "Произошла ошибка ! :("
                 Log.i("MyTag", "Error: " + error.toString())
-                Toast.makeText(requireContext(), "Company Fragment: Ошибка подключения!", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Ошибка подключения!", Toast.LENGTH_LONG).show()
             }
         })
 
